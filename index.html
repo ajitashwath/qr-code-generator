@@ -1,44 +1,74 @@
 <!DOCTYPE html>
-<html lang = "en-US">
-    <head>
-        <meta charset = "UTF-8">
-        <meta http-equiv = "X-UA-Compatible" content = "IE=edge">
-        <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
-        <title>QR Code Generator</title>
-        <link rel = "stylesheet" href = "style.css">
-    </head>
-    <body>
-        <section>
-            <div class = "row">
-                <input type = "color" class = "light" value = "#FFFFFF">
-                <input type = "color" class = "dark">
-                <select class = "sizes">
-                    <option value = "100">100x100</option>
-                    <option value = "200">200x200</option>
-                    <option value = "300">300x300</option>
-                    <option value = "400">400x400</option>
-                    <option selected value = "500">500x500</option>
-                    <option value = "600">600x600</option>
-                    <option value = "700">700x700</option>
-                    <option value = "800">800x800</option>
-                    <option value = "900">900x900</option>
-                    <option value = "1000">1000x1000</option>
-                </select>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>QR Code Generator</h1>
+            <button class="theme-toggle" id="themeToggle">
+                <i class="fas fa-moon"></i>
+            </button>
+        </header>
+        
+        <main class="generator-section">
+            <div class="settings-panel">
+                <div class="color-controls">
+                    <div class="color-group">
+                        <label>Background Color</label>
+                        <input type="color" class="light" value="#FFFFFF">
+                    </div>
+                    <div class="color-group">
+                        <label>QR Color</label>
+                        <input type="color" class="dark" value="#000000">
+                    </div>
+                    <div class="size-group">
+                        <label>QR Size</label>
+                        <select class="sizes">
+                            <option value="100">100x100</option>
+                            <option value="200">200x200</option>
+                            <option value="300">300x300</option>
+                            <option value="400">400x400</option>
+                            <option selected value="500">500x500</option>
+                            <option value="600">600x600</option>
+                            <option value="700">700x700</option>
+                            <option value="800">800x800</option>
+                            <option value="900">900x900</option>
+                            <option value="1000">1000x1000</option>
+                        </select>
+                    </div>
+                </div>
             </div>
-            <input type = "text" class = "qr-text" placeholder = "Enter QR Text">
-            <div id = "qr-code"></div>
-            <div class = "action-container">
-                <a href = "#" class = "download btn" download = "QRCode">
+            <div class="input-section">
+                <input type="text" class="qr-text" placeholder="Enter text or URL to generate QR code">
+                <button class="generate-btn">Generate QR</button>
+            </div>
+
+            <div class="qr-container">
+                <div id="qr-code"></div>
+                <div class="loading-spinner hidden">
+                    <i class="fas fa-spinner fa-spin"></i>
+                </div>
+            </div>
+            <div class="action-container">
+                <a href="#" class="btn download-btn" download="QRCode">
+                    <i class="fas fa-download"></i>
                     <span>Download</span>
-                    <img src = "download.svg" alt = "">
                 </a>
-                <button class = "btn share-btn">
+                <button class="btn share-btn">
+                    <i class="fas fa-share-alt"></i>
                     <span>Share</span>
-                    <img src = "share.svg" alt = "">
                 </button>
             </div>
-        </section>
-        <script src = "https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-        <script src = "index.js"></script>
-    </body>
+        </main>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="index.js"></script>
+</body>
 </html>
