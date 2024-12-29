@@ -21,15 +21,15 @@
             <div class="settings-panel">
                 <div class="color-controls">
                     <div class="color-group">
-                        <label>Background Color</label>
-                        <input type="color" class="light" value="#FFFFFF">
+                        <label for="background-color">Background Color</label>
+                        <input type="color" id="background-color" class="light" value="#FFFFFF">
                     </div>
                     <div class="color-group">
-                        <label>QR Color</label>
-                        <input type="color" class="dark" value="#000000">
+                        <label for="qr-color">QR Color</label>
+                        <input type="color" id="qr-color" class="dark" value="#000000">
                     </div>
                     <div class="size-group">
-                        <label>QR Size</label>
+                        <label for="qr-size">QR Size</label>
                         <select class="sizes">
                             <option value="100">100x100</option>
                             <option value="200">200x200</option>
@@ -68,7 +68,7 @@
             </div>
         </main>
     </div>
+    <script src="script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-    <script src="index.js"></script>
 </body>
 </html>
