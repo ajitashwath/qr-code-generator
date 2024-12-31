@@ -4,5 +4,8 @@
  </div>
 
  <div align = "center">
+  <img src = "dark.png" alt = "dark-theme">
+ </div>
+
  
  
